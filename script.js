@@ -8,7 +8,7 @@ const emailList = [
         type: "malicious"
     },
     {
-        sender: "no-reply@empresaoficial.com",
+        sender: "no-reply@netsecure.com",
         subject: "Actualización de políticas internas",
         body: "Adjuntamos las nuevas políticas de uso interno. Por favor, revísalas.",
         attachment: "",
@@ -29,7 +29,7 @@ const emailList = [
         type: "suspicious"
     },
     {
-        sender: "banco@bbva-serviciocliente.com",
+        sender: "soporte@bbva-serviciocliente.com",
         subject: "Inicia sesión para desbloquear tu cuenta",
         body: "Se ha detectado un inicio de sesión desde otro dispositivo. Haz clic aquí para verificar.",
         attachment: "verificacion_seguridad.exe",
@@ -57,17 +57,17 @@ const emailList = [
         type: "malicious"
     },
     {
-        sender: "rrhh@empresaoficial.com",
+        sender: "rrhh@coresac.com",
         subject: "Actualización de datos laborales",
         body: "Adjuntamos documento con los formularios necesarios para actualizar tu información personal.",
         attachment: "formulario_actualizacion.docx",
         type: "safe"
     },
     {
-        sender: "soporte@app-messenger.net",
+        sender: "soporte@spotify.net",
         subject: "Nueva actualización disponible",
-        body: "Descarga la última versión de Messenger Pro desde el enlace adjunto.",
-        attachment: "MessengerProSetup.exe",
+        body: "Descarga la última versión de spotify desde el enlace adjunto.",
+        attachment: "spotifySetup.exe",
         type: "malicious"
     }
 ];

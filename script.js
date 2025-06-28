@@ -29,11 +29,11 @@ const emailList = [
         type: "malicious"
     },
     {
-    "sender": "alerta@whatsapp.com",
-    "subject": "Tu cuenta será eliminada",
-    "body": "Hemos detectado actividad sospechosa. Haz clic aquí para proteger tu cuenta.",
-    "attachment": "proteccion_cuenta.apk",
-    "type": "malicious"
+         sender": "alerta@whatsapp.com",
+         subject": "Tu cuenta será eliminada",
+         body": "Hemos detectado actividad sospechosa. Haz clic aquí para proteger tu cuenta.",
+         attachment": "proteccion_cuenta.apk",
+         type": "malicious"
     },
 ];
 

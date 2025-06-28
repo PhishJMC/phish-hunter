@@ -30,6 +30,11 @@ body {
     font-weight: bold;
 }
 
+#nextButton {
+    background-color: #28a745;
+    color: white;
+}
+
 button:nth-child(1) { background-color: #dc3545; color: white; }
 button:nth-child(2) { background-color: #ffc107; color: black; }
 button:nth-child(3) { background-color: #007bff; color: white; }

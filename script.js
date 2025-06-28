@@ -15,11 +15,11 @@ const emailList = [
         type: "safe"
     },
     {
-    sender: "supportserviciocliente@bancoazul.com",
-    subject: "Cuenta bloqueada temporalmente",
-    body: "Hemos detectado actividad inusual. Inicia sesión para desbloquear tu cuenta.",
-    attachment: "acceso_seguro.zip",
-    type: "malicious"
+        sender: "supportserviciocliente@bancoazul.com",
+        subject: "Cuenta bloqueada temporalmente",
+        body: "Hemos detectado actividad inusual. Inicia sesión para desbloquear tu cuenta.",
+        attachment: "acceso_seguro.zip",
+        type: "malicious"
     },
     {
         sender: "actualizacion-segura@microsftonline.com",

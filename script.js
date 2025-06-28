@@ -190,7 +190,7 @@ function showFinalSummary() {
     if (percentage === 100) {
         message = "🎉 ¡Excelente trabajo! Eres un experto en seguridad cibernética.";
     } else if (percentage >= 70) {
-        message = "👍 Buen trabajo. Tienes buen criterio para identificar correos peligrosos.";
+        message = "👍 Buen trabajo. Tienes buen criterio para identificar correos maliciosos.";
     } else {
         message = "⚠️ Puedes mejorar. Practica más para reconocer señales de phishing.";
     }

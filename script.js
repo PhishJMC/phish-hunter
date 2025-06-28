@@ -8,11 +8,18 @@ const emailList = [
         type: "malicious"
     },
     {
-        sender: "no-reply@empresaoficial.com",
+        sender: "no-reply@indecopi.com",
         subject: "Actualización de políticas internas",
         body: "Adjuntamos las nuevas políticas de uso interno. Por favor, revísalas.",
         attachment: "",
         type: "safe"
+    },
+    {
+    sender: "supportserviciocliente@bancoazul.com",
+    subject: "Cuenta bloqueada temporalmente",
+    body: "Hemos detectado actividad inusual. Inicia sesión para desbloquear tu cuenta.",
+    attachment: "acceso_seguro.zip",
+    type: "malicious"
     },
     {
         sender: "actualizacion-segura@microsftonline.com",

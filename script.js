@@ -74,6 +74,8 @@ const emailList = [
 
 let currentEmailIndex = 0;
 let timerInterval;
+let score = 0;
+let totalTime = 0;
 
 function loadEmail(index) {
     clearInterval(timerInterval);
@@ -96,11 +98,15 @@ function loadEmail(index) {
 }
 
 function deleteEmail() {
-    showResult("Correo eliminado correctamente.", "correct");
+    const email = emailList[currentEmailIndex];
+    let isCorrect = email.type === "malicious" || email.type === "suspicious";
+    handleAction(isCorrect);
 }
 
 function reportEmail() {
-    showResult("Correo reportado al departamento de seguridad.", "warning");
+    const email = emailList[currentEmailIndex];
+    let isCorrect = email.type === "malicious" || email.type === "suspicious";
+    handleAction(isCorrect);
 }
 
 function openEmail() {
@@ -110,39 +116,44 @@ function openEmail() {
     if (email.type === "safe") {
         message = "Este correo es seguro. ¡Buen trabajo!";
         className = "correct";
+        handleAction(true);
     } else if (email.type === "suspicious") {
         message = "Este correo parece sospechoso. Ten cuidado.";
         className = "warning";
+        handleAction(false);
     } else if (email.type === "malicious") {
         message = "¡Alerta! Este correo es malicioso. No debiste abrirlo.";
         className = "danger";
+        handleAction(false);
     }
 
     showResult(message, className);
 }
 
-function showResult(text, className) {
+function handleAction(isCorrect) {
     clearInterval(timerInterval);
+    if (isCorrect) {
+        score++;
+    }
+    document.getElementById("nextButton").style.display = "inline-block";
+}
+
+function showResult(text, className) {
     const resultDiv = document.getElementById("result");
     resultDiv.className = "result " + className;
     resultDiv.textContent = text;
     resultDiv.style.display = "block";
-
-    document.getElementById("nextButton").style.display = "inline-block";
 }
 
 function nextEmail() {
+    totalTime += (30 - parseInt(document.querySelector("#timer span").textContent));
     currentEmailIndex++;
+
     if (currentEmailIndex < emailList.length) {
         loadEmail(currentEmailIndex);
         document.getElementById("level").textContent = "Nivel " + (currentEmailIndex + 1);
     } else {
-        document.querySelector(".email-box").style.display = "none";
-        document.querySelector(".buttons").style.display = "none";
-        document.getElementById("result").className = "result correct";
-        document.getElementById("result").textContent = "🎉 ¡Felicidades! Has completado todos los niveles.";
-        document.getElementById("result").style.display = "block";
-        document.getElementById("nextButton").style.display = "none";
+        showFinalSummary();
     }
 }
 
@@ -163,6 +174,27 @@ function startTimer(duration) {
             document.getElementById("nextButton").style.display = "inline-block";
         }
     }, 1000);
+}
+
+function showFinalSummary() {
+    document.querySelector(".game-container").style.display = "none";
+    const summary = document.getElementById("summary");
+    summary.style.display = "block";
+
+    const percentage = Math.round((score / emailList.length) * 100);
+    document.getElementById("finalScore").textContent = `Puntaje final: ${score} de ${emailList.length}`;
+    document.getElementById("percentage").textContent = `Acierto: ${percentage}%`;
+    document.getElementById("totalTime").textContent = `Tiempo total: ${totalTime} segundos`;
+
+    let message = "";
+    if (percentage === 100) {
+        message = "🎉 ¡Excelente trabajo! Eres un experto en seguridad cibernética.";
+    } else if (percentage >= 70) {
+        message = "👍 Buen trabajo. Tienes buen criterio para identificar correos peligrosos.";
+    } else {
+        message = "⚠️ Puedes mejorar. Practica más para reconocer señales de phishing.";
+    }
+    document.getElementById("finalMessage").textContent = message;
 }
 
 // Cargar primer correo al inicio

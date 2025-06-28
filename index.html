@@ -2,14 +2,17 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Phish Hunter - Detecta Correos Maliciosos</title>
+    <title>Phish Hunter</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
         <h1>Phish Hunter</h1>
         <p>Analiza el correo que acabas de recibir:</p>
-        <p id="level" style="font-weight: bold;"></p>
+
+        <p id="level">Nivel 1</p>
+        <p id="timer">Tiempo restante: <span>30</span>s</p>
+
         <div class="email-box">
             <p><strong>De:</strong> <span id="sender"></span></p>
             <p><strong>Asunto:</strong> <span id="subject"></span></p>
@@ -24,7 +27,7 @@
             <button onclick="openEmail()">Abrir</button>
             <button onclick="nextEmail()" id="nextButton" style="display:none;">Siguiente Correo</button>
         </div>
-        
+
         <div id="result" class="result"></div>
     </div>
 

@@ -34,7 +34,7 @@ const emailList = [
          body": "Hemos detectado actividad sospechosa. Haz clic aquí para proteger tu cuenta.",
          attachment": "proteccion_cuenta.apk",
          type": "malicious"
-    },
+    }
 ];
 
 let currentEmailIndex = 0;

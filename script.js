@@ -13,6 +13,13 @@ const emailList = [
         body: "Adjuntamos las nuevas políticas de uso interno. Por favor, revísalas.",
         attachment: "",
         type: "safe"
+    },    
+    {
+        sender: "actualizacion-segura@microsftonline.com",
+        subject: "Tu contraseña ha expirado",
+        body: "Haz clic aquí para restablecer tu contraseña antes de que sea demasiado tarde.",
+        attachment: "documento_seguridad.docx",
+        type: "suspicious"
     },
     {
         sender: "supportserviciocliente@bancoazul.com",
@@ -22,12 +29,12 @@ const emailList = [
         type: "malicious"
     },
     {
-        sender: "actualizacion-segura@microsftonline.com",
-        subject: "Tu contraseña ha expirado",
-        body: "Haz clic aquí para restablecer tu contraseña antes de que sea demasiado tarde.",
-        attachment: "documento_seguridad.docx",
-        type: "suspicious"
-    }
+    "sender": "alerta@whatsapp.com",
+    "subject": "Tu cuenta será eliminada",
+    "body": "Hemos detectado actividad sospechosa. Haz clic aquí para proteger tu cuenta.",
+    "attachment": "proteccion_cuenta.apk",
+    "type": "malicious"
+    },
 ];
 
 let currentEmailIndex = 0;
